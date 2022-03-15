@@ -6,34 +6,19 @@ const TextFieldComponent = memo(
   ({
     name,
     placeholder,
-    onChangeText,
-    isValid,
+    onChangeText = () => {},
+    customStyle = {},
     value,
   }) => {
-    const [field, setField] = useState({
-      isFocused: false,
-    });
     return (
       <View
-        style={
-          isValid === false
-            ? [styles.container, styles.isError]
-            : field.isFocused
-            ? [styles.container, styles.isFocused]
-            : [styles.container, styles.isBlur]
-        }>
+        style={[styles.container, customStyle]}>
         <TextInput
           name={name}
           value={value}
           placeholder={placeholder}
-          style={name !== 'body' ? styles.inputField : styles.bodyField}
-          onFocus={() => setField({...field, isFocused: true})}
-          onBlur={() => {
-            setField({...field, isFocused: false});
-          }}
-          multiline={name === 'body'}
+          style={styles.inputField}
           onChangeText={onChangeText}
-          keyboardType={name === 'email' ? 'email-address' : null}
         />
       </View>
     );
