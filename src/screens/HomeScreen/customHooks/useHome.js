@@ -51,11 +51,16 @@ export default function useHome(props) {
         }
     }
 
+    const onSave = () => {
+            setRenderDetails(0);   
+    }
+
   return [
     renderDetails, 
     updatePlayerOneScore,
     updatePlayerTwoScore,
     onContinue,
     winner,
+    onSave,
   ];
 }

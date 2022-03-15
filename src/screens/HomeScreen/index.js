@@ -17,6 +17,7 @@ const HomeScreen = (props) => {
     updatePlayerTwoScore,
     onContinue,
     winner,
+    onSave,
   ] = useHome(props);
 
   useEffect(() => {
@@ -99,7 +100,7 @@ const HomeScreen = (props) => {
           </View>
           
         </View>
-        <TouchableOpacity onPress={() => onContinue()} style={[styles.button, {alignSelf: 'center'}]}  >
+        <TouchableOpacity onPress={() => onSave()} style={[styles.button, {alignSelf: 'center'}]}  >
           <Text style={styles.buttonText} >
             {'Save'}
           </Text>

@@ -8,8 +8,8 @@ const CommonButton = memo(
     onPress,
   }) => {
     return (
-        <TouchableOpacity style={{borderWidth: 1, borderColor: 'black', borderRadius: 25, width: 20, height: 20, alignItems: 'center', justifyContent: 'center'}} onPress={() => onPress()} >
-            <Text style={{fontSize: 12, fontWeight: '600'}} >
+        <TouchableOpacity style={styles.container} onPress={() => onPress()} >
+            <Text style={styles.text} >
                 {text}
             </Text>
             </TouchableOpacity>
